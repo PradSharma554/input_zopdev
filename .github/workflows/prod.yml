@@ -2,9 +2,9 @@ name: Build and Deploy for JS(npm) service
 
 on:
   push:
-    branches: [ development ]
+    branches: [ main ]
   pull_request:
-    branches: [ development ]
+    branches: [ main ]
 
 env:
   SERVICE_NAME: first-service
@@ -30,9 +30,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"	
-
-      - name: Build
-        run: yarn build
 
       - name: Login to GAR
         uses: docker/login-action@v2
